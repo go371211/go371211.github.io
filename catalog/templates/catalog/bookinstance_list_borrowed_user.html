@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Borrowed books</h1>
+
+    {% if bookinstance_list %}
+        <table class="table table-striped table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Due Back</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for instance in bookinstance_list %}
+                    <tr class="{% if instance.is_overdue %}text-danger{% endif %}">
+                        <td><a href="{% url 'book-detail' instance.book.pk %}">{{ instance.book.title }}</a></td>
+                        <td>{{ instance.due_back }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No books borrowed.</p>
+    {% endif %}
+{% endblock %}

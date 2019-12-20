@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+    {% if perms.catalog.can_modify_author %}
+        <div class="staff-button-container">
+            <a href="{% url 'author-create' %}" class="staff-button">Add</a>
+        </div>
+    {% endif %}
+    {% if author_list %}
+        <ul>
+            {% for author in author_list %}
+                <li>
+                    <a href="{{ author.get_absolute_url }}">{{ author.first_name }}, {{ author.last_name }}</a>
+                    {% if perms.catalog.can_modify_author %}
+                        <span class="staff-button-container-inline">
+                            <a href="{% url 'author-update' pk=author.pk %}" class="staff-button">Update</a>
+                            <a href="{% url 'author-delete' pk=author.pk %}" class="staff-button">Delete</a>
+                        </span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No authors.</p>
+    {% endif %}
+{% endblock %}

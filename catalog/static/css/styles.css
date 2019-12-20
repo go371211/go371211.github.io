@@ -1,0 +1,53 @@
+.sidebar-nav {
+    margin-top: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    margin-top: 0.8rem;
+}
+
+.staff-button-container {
+    margin: 10px;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.staff-button {
+    margin-left: 1px;
+}
+
+.login-button-container {
+    display: flex;
+}
+
+.login-button-other {
+    flex: 5;
+    display: flex;
+    margin-right: 10px;
+}
+
+.login-button-other label {
+    font-size: x-large;
+}
+
+.login-button-login {
+    width: auto;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.login-message {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.book-title {
+    font-family: cursive;
+}
+
+/* boostrap override */
+.list-group-item.active a {
+    color: white;
+}
