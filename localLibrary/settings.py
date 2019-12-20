@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ey=!f@y3@y7gxjx#be9v$ewtwhc0zc
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-    'pure-sea-24316.herokuapp.com',
+    'local-library-demo.herokuapp.com',
     '127.0.0.1',
 ]
 
